@@ -18,7 +18,7 @@ Git
 
 ### Installation instruction
 ```
-Git clone https://github.com/elijah-mwendiaa/codechallenge.git
+Git clone https://github.com/elijah-mwendia/codechallenge.git
 
 ```
 

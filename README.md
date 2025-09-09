@@ -32,7 +32,7 @@ Github
 Javascript
 
 ## Support and contact details
-github.com/hamida-mstafa
+github.com/elijah-mwendia
 
 ### License
 The content of this site is licensed under the MIT license

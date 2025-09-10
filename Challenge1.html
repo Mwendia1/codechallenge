@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" 
+    content="width=device-width,initial-scale=1.0">
+    <title>Student Grade Generator</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to left,rgb(121, 27, 100),rgb(76, 145, 122),rgb(145, 36, 139));
+        }
+        .container{
+            background: rgb(175, 22, 206);
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(209, 42, 42, 0.1);
+            text-align: center;
+        }
+        input{
+            padding: 0.5em;
+            margin: 1em 0;
+            border-radius: 4px;
+            background-color: #cf9ca7;
+            color: rgb(111, 26, 168);
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #007bff;
+        }
+        #result {
+            margin-top: 1em;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Student Grade Generator</h2>
+        <p>Enter the student's marks(0-100) to find their grade.</p>
+        <input type="number"id="marksInput"
+        placeholder="Enter marks">
+        <button onclick="calculateGrade()">Get Grade</button>
+        <div id="result"></div>
+    </div>
+    <script>
+        function calculateGrade() {
+            //Get the value from the input field
+            const marksInput = 
+            document.getElementById("marksInput").value;
+            const resultDisplay = 
+            document.getElementById("result");
+            //Convert the input to a number
+            const marks = parseInt(marksInput, 10);
+
+            //Validate the input
+            if (isNaN(marks) || marks< 0 || marks > 100) {
+                resultDisplay.textContent = "Please enter a valid number between 0 and 100.";
+                resultDisplay.style.color = "red";
+                return;//Stop the function if the input is invalid
+            }
+            let grade;
+            //Determine the grade using conditional statements
+            if (marks > 79) {
+                grade = "A";
+            } else if (marks >= 60) {
+                grade = "B";
+            } else if (marks >= 50) {
+                grade ="C";
+            } else if (marks >= 40) {
+                grade = "D";
+            } else {
+                grade = "E";
+            }
+            //Display the final result
+            resultDisplay.textContent = `Grade: ${grade}`;
+            resultDisplay.style.color = "white";
+        }
+    </script>
+</body>
+</html>
